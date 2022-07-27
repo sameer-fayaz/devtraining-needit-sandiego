@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element extends="task" label="Incident backlog" max_length="40" name="x_58872_needit_incident_backlog" sizeclass="0" type="collection">
+        <element default="javascript:incidentGetCaller()" dependent="company" dependent_on_field="company" dynamic_default_value="0d39d9105f220100a9ad2572f2b47796" label="Caller" max_length="32" name="caller_id" reference="sys_user" type="reference" use_dependent_field="true" use_dynamic_default="true"/>
+        <element choice="3" default="inquiry" label="Category" max_length="40" name="category" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Inquiry/Help" sequence="1" value="inquiry"/>
+                <element inactive_on_update="false" label="Software" sequence="2" value="software"/>
+                <element inactive_on_update="false" label="Hardware" sequence="3" value="hardware"/>
+                <element inactive_on_update="false" label="Network" sequence="4" value="network"/>
+                <element inactive_on_update="false" label="Database" sequence="5" value="database"/>
+            </choice>
+        </element>
+        <element choice="3" dependent="category" dependent_on_field="category" label="Subcategory" max_length="40" name="subcategory" type="string" use_dependent_field="true">
+            <choice>
+                <element dependent_value="inquiry" inactive_on_update="false" label="Antivirus" value="antivirus"/>
+                <element dependent_value="hardaware" inactive_on_update="false" label="CPU" value="cpu"/>
+                <element dependent_value="database" inactive_on_update="false" label="DB2" value="db2"/>
+                <element dependent_value="network" inactive_on_update="false" label="DHCP" value="dhcp"/>
+                <element dependent_value="hardware" inactive_on_update="false" label="Disk" value="disk"/>
+                <element dependent_value="network" inactive_on_update="false" label="DNS" value="disk"/>
+                <element dependent_value="inquiry" inactive_on_update="false" label="Email" value="email"/>
+                <element dependent_value="software" inactive_on_update="false" label="Email" value="email"/>
+                <element dependent_value="inquiry" inactive_on_update="false" label="Internal Application" value="internal application"/>
+                <element dependent_value="inquiry" inactive_on_update="false" label="IP Address" value="ip address"/>
+                <element dependent_value="hardware" inactive_on_update="false" label="Keyboard" value="keyboard"/>
+            </choice>
+        </element>
+    </element>
+</database>
